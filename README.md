@@ -1,21 +1,13 @@
-# mediation-platform
+# pdf2canvas
 
-> 多元调解平台
+> 从服务器请求pdf文件转成canvas进行前端展示
 
-## Build Setup
+## 解决无法显示盖章的问题
 
 ``` bash
-# install dependencies
-npm install
+# 将32251行代码注释掉就会显示电子签章。
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+  if (data.fieldType === 'Sig') {
+    // _this2.setFlags(_util.AnnotationFlag.HIDDEN);
+  }
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
